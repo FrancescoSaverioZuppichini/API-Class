@@ -23,7 +23,7 @@ getAll({ query })
 getOne({ id })
 create(toCreate)
 update(toUpdate)
-endpoints.delete({ id })
+delete({ id })
 ```
 
 You can check it out my medium article to further informations
