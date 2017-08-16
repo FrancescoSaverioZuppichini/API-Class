@@ -1,12 +1,15 @@
 {
-  "name": "apiclientbuilder",
+  "name": "api-class",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./distribution/API.js",
   "scripts": {
     "test": "mocha-webpack --watch ./test/test.js",
-    "build": "babel ./source/API.js --presets babel-preset-es2015 --out-dir distribution",
+    "build": "babel ./source --presets babel-preset-es2015 --out-dir distribution",
     "prepublish": "npm run build"
+  },
+  "repository" : { "type" : "git",
+    "url" : "https://github.com/FrancescoSaverioZuppichini/API-Class"
   },
   "author": "",
   "license": "ISC",
