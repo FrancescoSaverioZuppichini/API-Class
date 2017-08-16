@@ -1,0 +1,27 @@
+{
+  "name": "apiclientbuilder",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha-webpack --watch ./test/test.js",
+    "build": "babel ./source/API.js --presets babel-preset-es2015 --out-dir distribution",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "es6-promise": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.22.0",
+    "mocha": "^3.4.2",
+    "mocha-loader": "^1.1.1",
+    "mocha-webpack": "^1.0.0-beta.1",
+    "webpack": "^2.6.1"
+  }
+}
