@@ -1,6 +1,6 @@
 {
   "name": "api-class",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "./distribution/API.js",
   "scripts": {
@@ -8,8 +8,9 @@
     "build": "babel ./source --presets babel-preset-es2015 --out-dir distribution",
     "prepublish": "npm run build"
   },
-  "repository" : { "type" : "git",
-    "url" : "https://github.com/FrancescoSaverioZuppichini/API-Class"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrancescoSaverioZuppichini/API-Class"
   },
   "author": "",
   "license": "ISC",
