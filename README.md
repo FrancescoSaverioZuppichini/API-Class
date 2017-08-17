@@ -27,3 +27,5 @@ delete({ id })
 ```
 
 You can check it out my medium article to further informations
+
+https://medium.com/@FrancescoZ/how-to-call-api-in-a-smart-way-2ca572c6fe86
