@@ -47,31 +47,31 @@ var API = function () {
 
       var endpoints = {};
 
-      var resouceURL = this.url + '/' + name;
+      var resourceURL = this.url + '/' + name;
 
       endpoints.getAll = function () {
         var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
             query = _ref3.query;
 
-        return axios.get(resouceURL, { params: { query: query } });
+        return axios.get(resourceURL, { params: { query: query } });
       };
 
       endpoints.getOne = function (_ref4) {
         var id = _ref4.id;
-        return axios.get(resouceURL + '/' + id);
+        return axios.get(resourceURL + '/' + id);
       };
 
       endpoints.create = function (toCreate) {
-        return axios.post(resouceURL, toCreate);
+        return axios.post(resourceURL, toCreate);
       };
 
       endpoints.update = function (toUpdate) {
-        return axios.put(resouceURL + '/' + toUpdate.id, toUpdate);
+        return axios.put(resourceURL + '/' + toUpdate.id, toUpdate);
       };
 
       endpoints.delete = function (_ref5) {
         var id = _ref5.id;
-        return axios.delete(resouceURL + '/' + id);
+        return axios.delete(resourceURL + '/' + id);
       };
 
       return endpoints;
