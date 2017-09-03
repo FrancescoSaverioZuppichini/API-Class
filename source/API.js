@@ -24,17 +24,17 @@ class API {
   createBasicCRUDEndpoints( {name} ) {
     var endpoints = {}
     
-    const resouceURL = `${this.url}/${name}`
+    const resourceURL = `${this.url}/${name}`
   
-    endpoints.getAll = ({ query }={}) => axios.get(resouceURL,{ params: { query } })
+    endpoints.getAll = ({ query }={}) => axios.get(resourceURL, { params: { query } })
 
-    endpoints.getOne = ({ id }) =>  axios.get(`${resouceURL}/${id}`)
+    endpoints.getOne = ({ id }) =>  axios.get(`${resourceURL}/${id}`)
 
-    endpoints.create = (toCreate) =>  axios.post(resouceURL,toCreate)
+    endpoints.create = (toCreate) =>  axios.post(resourceURL, toCreate)
     
-    endpoints.update = (toUpdate) => axios.put(`${resouceURL}/${toUpdate.id}`,toUpdate)
+    endpoints.update = (toUpdate) => axios.put(`${resourceURL}/${toUpdate.id}`, toUpdate)
     
-    endpoints.delete = ({ id }) => axios.delete(`${resouceURL}/${id}`)
+    endpoints.delete = ({ id }) => axios.delete(`${resourceURL}/${id}`)
     
     return endpoints
   
