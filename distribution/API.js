@@ -21,7 +21,7 @@ var API = function () {
   }
   /**
    * Create and store a single entity's endpoints
-   * @param {A entity Object} entity 
+   * @param {A entity Object} entity
    */
 
 
@@ -37,7 +37,7 @@ var API = function () {
     }
     /**
      * Create the basic endpoints handlers for CRUD operations
-     * @param {A entity Object} entity 
+     * @param {A entity Object} entity
      */
 
   }, {
@@ -69,8 +69,13 @@ var API = function () {
         return axios.put(resourceURL + '/' + toUpdate.id, toUpdate);
       };
 
-      endpoints.delete = function (_ref5) {
+      endpoints.patch = function (_ref5, toPatch) {
         var id = _ref5.id;
+        return axios.patch(resourceURL + '/' + id, toPatch);
+      };
+
+      endpoints.delete = function (_ref6) {
+        var id = _ref6.id;
         return axios.delete(resourceURL + '/' + id);
       };
 
