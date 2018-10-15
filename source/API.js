@@ -21,22 +21,22 @@ class API {
    * Create the basic endpoints handlers for CRUD operations
    * @param {A entity Object} entity
    */
-  createBasicCRUDEndpoints( { name, config={} } ) {
+  createBasicCRUDEndpoints( { name } ) {
     var endpoints = {}
 
     const resourceURL = `${this.url}/${name}`
 
-    endpoints.getAll = ({ query }={}) => axios.get(resourceURL, { params: { query }, ...config })
+    endpoints.getAll = ({ query}={}, config={} ) => axios.get(resourceURL, { params: { query }, ...config })
 
-    endpoints.getOne = ({ id }) =>  axios.get(`${resourceURL}/${id}`, config)
+    endpoints.getOne = ({ id}, config={}) =>  axios.get(`${resourceURL}/${id}`, config)
 
-    endpoints.create = (toCreate) =>  axios.post(resourceURL, toCreate, config)
+    endpoints.create = (toCreate, config={}) =>  axios.post(resourceURL, toCreate, config)
 
-    endpoints.update = (toUpdate) => axios.put(`${resourceURL}/${toUpdate.id}`, toUpdate, config)
+    endpoints.update = (toUpdate, config={}) => axios.put(`${resourceURL}/${toUpdate.id}`, toUpdate, config)
 
-    endpoints.patch  = ({id}, toPatch) => axios.patch(`${resourceURL}/${id}`, toPatch, config)
+    endpoints.patch  = ({id}, toPatch, config={}) => axios.patch(`${resourceURL}/${id}`, toPatch, config)
 
-    endpoints.delete = ({ id }) => axios.delete(`${resourceURL}/${id}`, config)
+    endpoints.delete = ({ id }, config={}) => axios.delete(`${resourceURL}/${id}`, config)
 
     return endpoints
 
