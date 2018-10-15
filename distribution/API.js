@@ -49,34 +49,39 @@ var API = function () {
 
       var resourceURL = this.url + '/' + name;
 
-      endpoints.getAll = function () {
-        var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-            query = _ref3.query;
-
-        return axios.get(resourceURL, { params: { query: query } });
+      endpoints.getAll = function (_ref3) {
+        var _ref3$query = _ref3.query,
+            query = _ref3$query === undefined ? {} : _ref3$query;
+        var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        return axios.get(resourceURL, Object.assign({ params: { query: query }, config: config }));
       };
 
       endpoints.getOne = function (_ref4) {
         var id = _ref4.id;
-        return axios.get(resourceURL + '/' + id);
+        var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        return axios.get(resourceURL + '/' + id, config);
       };
 
       endpoints.create = function (toCreate) {
-        return axios.post(resourceURL, toCreate);
+        var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        return axios.post(resourceURL, toCreate, config);
       };
 
       endpoints.update = function (toUpdate) {
-        return axios.put(resourceURL + '/' + toUpdate.id, toUpdate);
+        var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        return axios.put(resourceURL + '/' + toUpdate.id, toUpdate, config);
       };
 
       endpoints.patch = function (_ref5, toPatch) {
         var id = _ref5.id;
-        return axios.patch(resourceURL + '/' + id, toPatch);
+        var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        return axios.patch(resourceURL + '/' + id, toPatch, config);
       };
 
       endpoints.delete = function (_ref6) {
         var id = _ref6.id;
-        return axios.delete(resourceURL + '/' + id);
+        var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        return axios.delete(resourceURL + '/' + id, config);
       };
 
       return endpoints;

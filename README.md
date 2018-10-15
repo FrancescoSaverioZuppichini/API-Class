@@ -19,13 +19,20 @@ const myAPI = new API({ url: '/api' })
 `API` class exposes the basic CRUD operations
 
 ```
-getAll({ query })
-getOne({ id })
-create(toCreate)
-update(toUpdate)
-delete({ id })
+getAll({ query }, config)
+getOne({ id }, config)
+create(toCreate, config)
+update(toUpdate, config)
+delete({ id }, config)
 ```
+### Q&A
 
+How to pass headers to axios?
+
+```
+const myAPI = new API({ url: '/api' })
+myAPI.getOne({ id: 0 },  { headers: {....} } )
+```
 You can check it out my medium article to further informations
 
 https://medium.com/@FrancescoZ/how-to-call-api-in-a-smart-way-2ca572c6fe86
