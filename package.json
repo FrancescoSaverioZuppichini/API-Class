@@ -1,6 +1,6 @@
 {
   "name": "api-class",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "./distribution/API.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
-    "es6-promise": "^4.1.0"
+    "es6-promise": "^4.1.0",
+    "growl": ">=1.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -29,3 +30,4 @@
     "webpack": "^2.6.1"
   }
 }
+ 
