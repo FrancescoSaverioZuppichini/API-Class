@@ -4,7 +4,7 @@
   "description": "",
   "main": "./distribution/API.js",
   "scripts": {
-    "test": "mocha-webpack --watch ./test/test.js",
+    "test": "mocha-webpack ./test/test.js --watch ",
     "build": "babel ./source --presets babel-preset-es2015 --out-dir distribution",
     "prepublish": "npm run build"
   },
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "chai": "^4.2.0",
     "es6-promise": "^4.1.0",
     "growl": ">=1.10.0"
   },
@@ -30,4 +31,3 @@
     "webpack": "^2.6.1"
   }
 }
- 

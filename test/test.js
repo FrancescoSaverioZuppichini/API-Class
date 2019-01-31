@@ -1,0 +1,22 @@
+var assert = require('assert');
+import API from '../source/API.js'
+var should = require('chai').should()
+// console.log(API.default())
+describe('API', function() {
+
+  describe('#constructor', function() {
+    it('should correctly create an API istance with  url', function() {
+        const url = 'foo/bar'
+        var myAPI = new API({url})
+        assert.equal(myAPI.url, url)
+    })
+  })
+  describe('entity', () => {
+    it('should correctly create an entity istance with a name', () =>{
+        var myAPI = new API({ url : ''})
+        const name = 'foo-bar'
+        myAPI.createEntity({ name })
+        myAPI.endpoints.should.have.property(name)
+    })  
+  })
+})
