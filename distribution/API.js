@@ -10,6 +10,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var axios = require('axios');
 
+function kebabCaseToCamel(str) {
+  return str.replace(/(\-\w)/g, function (matches) {
+    return matches[1].toUpperCase();
+  });
+}
+
 var API = function () {
   function API(_ref) {
     var url = _ref.url;
@@ -28,7 +34,16 @@ var API = function () {
   _createClass(API, [{
     key: 'createEntity',
     value: function createEntity(entity) {
-      this.endpoints[entity.name] = this.createBasicCRUDEndpoints(entity);
+      /**
+       * If there is a - in the entity.name, then change it 
+       * to camelCase. E.g 
+       * ```
+       * myApi.createEntity({ name : 'foo-bar'})
+       * myApi.endpoints.fooBar.getAll(...)
+       */
+
+      var name = kebabCaseToCamel(entity.name);
+      this.endpoints[name] = this.createBasicCRUDEndpoints(entity);
     }
   }, {
     key: 'createEntities',
