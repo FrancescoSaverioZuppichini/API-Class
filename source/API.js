@@ -1,13 +1,10 @@
 const axios = require('axios')
 
-function camelize(str) {
-  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
-    return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
-  }).replace(/\s+/g, '');
-}
+function kebabCaseToCamel(str) {
+      return str.replace( /(\-\w)/g, (matches) => matches[1].toUpperCase())
+  }
 
 class API {
-
   constructor({ url }){
     this.url = url
     this.endpoints = {}
@@ -17,7 +14,16 @@ class API {
    * @param {A entity Object} entity
    */
   createEntity(entity) {
-    this.endpoints[entity.name] = this.createBasicCRUDEndpoints(entity)
+    /**
+     * If there is a - in the entity.name, then change it 
+     * to camelCase. E.g 
+     * ```
+     * myApi.createEntity({ name : 'foo-bar'})
+     * myApi.endpoints.fooBar.getAll(...)
+     */
+
+    const name = kebabCaseToCamel(entity.name)
+    this.endpoints[name] = this.createBasicCRUDEndpoints(entity)
   }
 
   createEntities(arrayOfEntity) {

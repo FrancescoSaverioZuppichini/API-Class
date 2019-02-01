@@ -14,9 +14,18 @@ describe('API', function() {
   describe('entity', () => {
     it('should correctly create an entity istance with a name', () =>{
         var myAPI = new API({ url : ''})
-        const name = 'foo-bar'
+        const name = 'posts'
         myAPI.createEntity({ name })
         myAPI.endpoints.should.have.property(name)
+        myAPI.endpoints.posts.getAll
+
     })  
+    it('should correctly create an entity istance with a kebab case name', () =>{
+      var myAPI = new API({ url : ''})
+      const name = 'posts-feedbacks'
+      myAPI.createEntity({ name })
+      myAPI.endpoints.should.have.property('postsFeedbacks')
+      myAPI.endpoints.postsFeedbacks.getAll
+  })  
   })
 })
