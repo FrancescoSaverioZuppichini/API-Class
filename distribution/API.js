@@ -65,10 +65,10 @@ var API = function () {
       var resourceURL = this.url + '/' + name;
 
       endpoints.getAll = function (_ref3) {
-        var _ref3$query = _ref3.query,
-            query = _ref3$query === undefined ? {} : _ref3$query;
+        var _ref3$params = _ref3.params,
+            params = _ref3$params === undefined ? {} : _ref3$params;
         var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-        return axios.get(resourceURL, Object.assign({ params: { query: query }, config: config }));
+        return axios.get(resourceURL, Object.assign({ params: params, config: config }));
       };
 
       endpoints.getOne = function (_ref4) {
