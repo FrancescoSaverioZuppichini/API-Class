@@ -68,7 +68,7 @@ var API = function () {
         var _ref3$params = _ref3.params,
             params = _ref3$params === undefined ? {} : _ref3$params;
         var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-        return axios.get(resourceURL, Object.assign({ params: params, config: config }));
+        return axios.get(resourceURL, { params: params }, config);
       };
 
       endpoints.getOne = function (_ref4) {

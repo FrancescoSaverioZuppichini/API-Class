@@ -27,5 +27,15 @@ describe('API', function() {
       myAPI.endpoints.should.have.property('postsFeedbacks')
       myAPI.endpoints.postsFeedbacks.getAll
   })  
+  it('should correctly get', () =>{
+    var myAPI = new API({ url : 'https://randomuser.me/'})
+    const name = 'api'
+    myAPI.createEntity({ name })
+    myAPI.endpoints.api.getAll({})
+    .then(({data})=> console.log(data))
+    .catch(err => console.log(err))
+
+})  
   })
+  
 })

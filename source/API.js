@@ -38,7 +38,7 @@ class API {
 
     const resourceURL = `${this.url}/${name}`
 
-    endpoints.getAll = ({ params={}}, config={} ) => axios.get(resourceURL, Object.assign({ params, config }))
+    endpoints.getAll = ({ params={}}, config={} ) => axios.get(resourceURL, { params }, config)
 
     endpoints.getOne = ({ id }, config={}) =>  axios.get(`${resourceURL}/${id}`, config)
 
