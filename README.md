@@ -29,7 +29,7 @@ myApi.endpoints.posts.getAll()
 All `API`'s endpoints have basic CRUD operations
 
 ```javascript
-getAll({ query }, config)
+getAll(params, config)
 getOne({ id }, config)
 create(toCreate, config)
 update(toUpdate, config)
