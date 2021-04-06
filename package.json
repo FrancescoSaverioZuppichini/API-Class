@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "chai": "^4.2.0",
     "es6-promise": "^4.1.0",
     "growl": ">=1.10.0"
